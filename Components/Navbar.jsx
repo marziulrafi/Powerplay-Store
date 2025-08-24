@@ -21,9 +21,11 @@ export default function Navbar() {
                         <Link href="/products" className="text-gray-700 hover:text-blue-600">
                             Products
                         </Link>
-                        <Link href="/dashboard/add-product" className="text-gray-700 hover:text-blue-600">
-                            Dashboard
-                        </Link>
+                        {session && (
+                            <Link href="/dashboard/add-product" className="text-gray-700 hover:text-blue-600">
+                                Dashboard
+                            </Link>
+                        )}
                     </div>
 
                     <div>
