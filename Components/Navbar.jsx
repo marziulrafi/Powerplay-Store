@@ -11,7 +11,7 @@ export default function Navbar() {
                 <div className="flex justify-between items-center h-16">
 
                     <Link href="/" className="text-2xl font-bold text-blue-600">
-                        Powerplay
+                        PowerPlay
                     </Link>
 
                     <div className="hidden md:flex space-x-6">
@@ -21,7 +21,7 @@ export default function Navbar() {
                         <Link href="/products" className="text-gray-700 hover:text-blue-600">
                             Products
                         </Link>
-                        <Link href="/dashboard" className="text-gray-700 hover:text-blue-600">
+                        <Link href="/dashboard/add-product" className="text-gray-700 hover:text-blue-600">
                             Dashboard
                         </Link>
                     </div>
@@ -34,14 +34,14 @@ export default function Navbar() {
                                 </span>
                                 <button
                                     onClick={() => signOut({ callbackUrl: "/" })}
-                                    className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
+                                    className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition cursor-pointer"
                                 >
                                     Logout
                                 </button>
                             </div>
                         ) : (
                             <Link href="/login">
-                                <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition">
+                                <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition cursor-pointer">
                                     Login
                                 </button>
                             </Link>

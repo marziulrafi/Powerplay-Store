@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+// import { useRouter } from "next/router";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -77,7 +78,7 @@ export default function AddProduct() {
                 />
                 <button
                     type="submit"
-                    className="w-full bg-indigo-500 text-white py-3 rounded-lg hover:bg-indigo-600 transition"
+                    className="w-full bg-indigo-500 text-white py-3 rounded-lg hover:bg-indigo-600 transition cursor-pointer"
                 >
                     Add Product
                 </button>
