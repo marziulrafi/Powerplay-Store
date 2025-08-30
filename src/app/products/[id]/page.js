@@ -8,6 +8,7 @@ import {
   Heart,
   ShoppingCart,
   Share2,
+  Loader,
 } from "lucide-react";
 
 export default function ProductPage({ params }) {
@@ -26,19 +27,26 @@ export default function ProductPage({ params }) {
     fetchProduct();
   }, [id]);
 
-  if (!product) return <div className="text-center py-20">Loading...</div>;
+  if (!product) return <div className="text-center py-20">
+    <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
+      <Loader className="w-12 h-12 text-gray-400" />
+    </div>
+    <h3 className="text-2xl font-bold text-gray-800 mb-2">
+      Please Wait ...
+    </h3>
+  </div>;
 
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-5">
       <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden grid lg:grid-cols-2 gap-10 p-8">
-       
+
         <div className="relative group">
           <img
             src={product.image}
             alt={product.name}
             className="w-full h-full object-cover rounded-2xl transform transition-transform duration-500 group-hover:scale-105"
           />
-         
+
           <div className="absolute top-5 left-5 flex flex-col gap-3">
             <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-cyan-300 rounded-xl flex items-center justify-center shadow-lg border border-white/30 animate-pulse">
               <Zap className="w-6 h-6 text-white" />
@@ -71,7 +79,7 @@ export default function ProductPage({ params }) {
               <span className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 ${product.price}
               </span>
-              
+
               <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
                 20% OFF
               </span>

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import axios from "axios";
-import { Star, Zap, Shield, ArrowRight, Eye } from "lucide-react";
+import { Star, Zap, Shield, ArrowRight, Eye, Loader } from "lucide-react";
 
 export default function ProductsPage() {
   const [products, setProducts] = useState([]);
@@ -108,7 +108,7 @@ export default function ProductsPage() {
         {products.length === 0 && (
           <div className="text-center py-16">
             <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Star className="w-12 h-12 text-gray-400" />
+              <Loader className="w-12 h-12 text-gray-400" />
             </div>
             <h3 className="text-2xl font-bold text-gray-800 mb-2">
               Loading Products...
